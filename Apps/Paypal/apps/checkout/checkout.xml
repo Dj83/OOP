@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5" method="upgrade">
+	<name>com_checkout</name>
+	<author>Daniel L Jackson</author>
+	<creationDate>February 2012</creationDate>
+	<copyright>(C) 2008 - 2012 Web Hens. All rights reserved.
+	</copyright>
+	<license>see LICENSE.txt</license>
+	<authorEmail>daniel.jackson2@utoledo.edu</authorEmail>
+	<authorUrl>www.webhens.com</authorUrl>
+	<version>2.5.0</version>
+	<description>Checkout component used for paypal transactions.</description>
+	<files folder="site">
+		<filename>controller.php</filename>
+		<filename>index.html</filename>
+		<filename>metadata.xml</filename>
+		<filename>router.php</filename>
+		<filename>checkout.php</filename>
+		<folder>views</folder>
+	</files>
+	<languages folder="site">
+		<language tag="en-GB">language/en-GB.com_checkout.ini
+		</language>
+	</languages>
+	<administration>
+		<files folder="admin">
+			<filename>index.html</filename>
+		</files>
+	</administration>
+</extension>

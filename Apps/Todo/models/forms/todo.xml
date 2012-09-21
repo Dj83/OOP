@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset addfieldpath="/administrator/components/com_categories/models/fields">
+		<field
+			id="id"
+			name="id"
+			type="hidden"
+			class="inputbox"
+			label="COM_TODO_ID_LABEL"
+			size="10"
+			default="0"
+			readonly="true" />
+
+		<field
+			name="asset_id"
+			type="hidden"
+			filter="unset" />
+
+		<field
+			id="subject"
+			name="subject"
+			type="text"
+			label="COM_TODO_FIELD_SUBJECT_LABEL"
+			description="COM_TODO_FIELD_SUBJECT_DESC"
+			class="inputbox"
+			size="30"
+			required="true" />
+
+		<field
+			name="body"
+			type="editor"
+			buttons="false"
+			label="COM_TODO_FIELD_BODY_LABEL"
+			description="COM_TODO_FIELD_BODYDESC"
+			class="inputbox"
+			filter="ToDoHelper::filterText"
+			asset_id="com_todo"
+		/>
+
+		<field
+			id="state"
+			name="state"
+			type="list"
+			label="JSTATUS"
+			description="JFIELD_PUBLISHED_DESC"
+			class="inputbox"
+			size="1"
+			default="1">
+			<option
+				value="1">
+				JPUBLISHED</option>
+			<option
+				value="0">
+				JUNPUBLISHED</option>
+			<option
+				value="2">
+				JARCHIVED</option>
+			<option
+				value="-2">
+				JTRASHED</option>
+		</field>
+		<field
+			id="catid"
+			name="catid"
+			type="categoryedit"
+			extension="com_todo"
+			label="JCATEGORY"
+			description="JFIELD_CATEGORY_DESC"
+			class="inputbox"
+			required="true">
+		</field>
+		<field
+			id="created"
+			name="created"
+			type="calendar"
+			filter="unset" />
+		<field
+			id="created_by"
+			name="created_by"
+			type="text"
+			filter="unset" />
+
+		<field
+			id="created_by_alias"
+			name="created_by_alias"
+			type="text"
+			label="JGLOBAL_FIELD_CREATED_BY_ALIAS_LABEL"
+			description="JGLOBAL_FIELD_CREATED_BY_ALIAS_DESC"
+			class="inputbox"
+			size="20" />
+
+		<field
+			id="publish_up"
+			name="publish_up"
+			type="calendar"
+			label="JGLOBAL_FIELD_PUBLISH_UP_LABEL"
+			description="JGLOBAL_FIELD_PUBLISH_UP_DESC"
+			class="inputbox"
+			format="%Y-%m-%d %H:%M:%S"
+			size="22"
+			filter="user_utc" />
+
+		<field
+			id="publish_down"
+			name="publish_down"
+			type="calendar"
+			label="JGLOBAL_FIELD_PUBLISH_DOWN_LABEL"
+			description="JGLOBAL_FIELD_PUBLISH_DOWN_DESC"
+			class="inputbox"
+			format="%Y-%m-%d %H:%M:%S"
+			size="22"
+			filter="user_utc" />
+
+		<field
+			id="access"
+			name="access"
+			type="accesslevel"
+			label="JFIELD_ACCESS_LABEL"
+			description="JFIELD_ACCESS_DESC"
+			class="inputbox"
+			size="1" />
+	</fieldset>
+</form>

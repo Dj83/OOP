@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+		<field name="id" type="text" default="0"
+			readonly="true" class="readonly"
+			label="JGLOBAL_FIELD_ID_LABEL" 	description ="JGLOBAL_FIELD_ID_DESC" />
+
+		<field
+			name="subject"
+			type="text"
+			label="COM_BULLETINS_FIELD_SUBJECT_LABEL"
+			description="COM_BULLETINS_FIELD_SUBJECT_DESC"
+			required="true" />
+
+		<field
+			name="message"
+			type="textarea"
+			rows="3"
+			cols="80"
+			label="COM_BULLETINS_FIELD_MESSAGE_LABEL"
+			description="COM_BULLETINS_FIELD_MESSAGE_DESC"
+			required="true" />
+
+		<field name="catid" type="categoryedit"
+			extension="com_bulletins"
+			label="JCATEGORY"
+			description="COM_BULLETINS_FIELD_CATEGORY_DESC"
+			class="inputbox"
+			addfieldpath="/administrator/components/com_categories/models/fields" />
+
+		<field name="state" type="list"
+			label="JSTATUS" description="COM_BULLETINS_FIELD_STATE_DESC"
+			class="inputbox" size="1" default="1" >
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+			<option value="2">JARCHIVED</option>
+			<option value="-2">JTRASHED</option>
+		</field>
+		<field name="priority" type="list"
+			label="COM_BULLETINS_FIELD_PRIORITY_LABEL" description="COM_BULLETINS_FIELD_PRIORITY_LABEL"
+			class="inputbox" size="1" default="1" >
+			<option value="1">COM_BULLETINS_FIELD_PRIORITY_LOW</option>
+			<option value="2">COM_BULLETINS_FIELD_PRIORITY_HIGH</option>
+			<option value="0">COM_BULLETINS_FIELD_PRIORITY_NORMAL</option>
+		</field>
+
+		<field name="access"
+			type="accesslevel"
+			label="JFIELD_ACCESS_LABEL"
+			description="JFIELD_ACCESS_DESC"
+			class="inputbox"
+			size="1" />
+
+		<field name="usergroups"
+			type="usergroups"
+			label="COM_BULLETINS_FIELD_USERGROUP_LABEL"
+			description="COM_BULLETINS_FIELD_USERGROUP_DESC"
+			class="inputbox"
+			addfieldpath="/components/com_bulletins/models/fields" />
+
+		<field name="ordering"
+			type="ordering"
+			class="inputbox"
+			label="JFIELD_ORDERING_LABEL"
+			description="JFIELD_ORDERING_DESC" />
+
+		<field name="language"
+			type="language"
+			label="JFIELD_LANGUAGE_LABEL"
+			description="COM_BULLETINS_FIELD_LANGUAGE_DESC"
+			class="inputbox">
+			<option value="*">JALL</option>
+		</field>
+	<field name="attachments" type="attachment" multiple="true"
+		filter="raw" maxfiles="5" preview="false"
+		label="COM_BULLETINS_FIELD_ATTACHMENT_LABEL" description="COM_BULLETINS_FIELD_ATTACHMENTS_DESC" />
+
+	<fieldset name="publish" label="COM_BULLETINS_GROUP_LABEL_PUBLISHING_DETAILS">
+
+		<field name="created" type="calendar"
+			label="COM_BULLETINS_FIELD_CREATED_LABEL" description="COM_BULLETINS_FIELD_CREATED_DESC"
+			class="inputbox" size="22" format="%Y-%m-%d %H:%M:%S"
+			filter="user_utc" />
+
+		<field name="publish_up" type="calendar"
+			label="COM_BULLETINS_FIELD_PUBLISH_UP_LABEL" description="COM_BULLETINS_FIELD_PUBLISH_UP_DESC"
+			class="inputbox" format="%Y-%m-%d %H:%M:%S" size="22"
+			filter="user_utc" />
+
+		<field name="publish_down" type="calendar"
+			label="COM_BULLETINS_FIELD_PUBLISH_DOWN_LABEL" description="COM_BULLETINS_FIELD_PUBLISH_DOWN_DESC"
+			class="inputbox" format="%Y-%m-%d %H:%M:%S" size="22"
+			filter="user_utc" />
+	</fieldset>
+</form>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5" method="install">
+	<name>Forms</name>
+	<creationDate>February 2012</creationDate>
+	<author>Daniel L. Jackson</author>
+	<authorEmail>daniel@webhens.com</authorEmail>
+	<authorUrl>www.webhens.com</authorUrl>
+	<copyright>Copyright &#169; 2008 - 2012 Web Hens, Inc. All Rights Reserved.</copyright>
+	<license>See license.txt</license>
+	<version>1.0.0</version>
+	<releaseDate>September 2012</releaseDate>
+	<releaseType>Major</releaseType>
+	<downloadUrl>http://www.webhens.com/tools/form-builder.html</downloadUrl>
+	<description>Online form generator that helps you create HTML forms for your blog, site, contact forms, feedback forms, web forms, php forms, small business, office, and more, all within minutes with absolutely no programming required!</description>
+	<install>
+		<sql>
+			<file type="mysql" charset="utf8">install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<installfile>install.forms.php</installfile>
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+	<uninstallfile>uninstall.forms.php</uninstallfile>
+	<update>
+		<schemas>
+			<schemapath driver="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+	<files folder="site">
+		<folder>controllers</folder>
+		<folder>helpers</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+		<filename>controller.php</filename>
+		<filename>forms.php</filename>
+		<filename>index.html</filename>
+		<filename>metadata.xml</filename>
+		<filename>router.php</filename>
+	</files>
+	<languages folder="site">
+		<language tag="en-GB">en-GB.com_forms.ini</language>
+	</languages>
+	<media folder="media" destination="com_forms">
+		<filename>index.html</filename>
+	</media>
+	<administration>
+		<menu img="class:forms">Forms</menu>
+		<submenu>
+			<menu link="option=com_forms" view="forms" img="class:forms" alt="Forms/Forms">Forms</menu>
+			<menu link="option=com_categories&amp;extension=com_forms" view="categories" img="class:forms-cat" alt="Forms/Categories">Categories</menu>
+		</submenu>
+		<files folder="admin">
+			<folder>controllers</folder>
+			<folder>helpers</folder>
+			<folder>models</folder>
+			<folder>sql</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>forms.php</filename>
+			<filename>index.html</filename>
+		</files>
+		<languages folder="admin">
+			<language tag="en-GB">en-GB.com_forms.ini</language>
+			<language tag="en-GB">en-GB.com_forms.sys.ini</language>
+		</languages>
+	</administration>
+	<additional>
+		<module name="mod_forms" folder="additional/module">Forms Module</module>
+		<plugin name="forms_system" folder="additional/plugin/system">System Plugin</plugin>
+		<plugin name="forms_content" folder="additional/plugin/content">Content Plugin</plugin>
+		<plugin name="forms_joomla" folder="additional/plugin/joomla">Joomla Plugin</plugin>
+		<plugin name="forms_search" folder="additional/plugin/search">Search Plugin</plugin>
+		<plugin name="forms_editor" folder="additional/plugin/editors">Editors Plugin</plugin>
+		<plugin name="forms_editor-xtd" folder="additional/plugin/editor-xtd">Editor Plugin</plugin>
+		<plugin name="forms_user" folder="additional/plugin/user">User Plugin</plugin>
+	</additional>
+</extension>

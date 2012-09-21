@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="property">
+		<fields name="property">
+			<field name="street" />
+			<field name="street2" />
+			<field name="suburb" />
+			<field name="state" />
+			<field name="postcode" />
+		</fields>
+	</fieldset>
+	<fieldset name="contact">
+		<fields name="contact">
+			<field name="firstname" />
+			<field name="lastname" />
+			<field name="email" />
+			<field name="telephone" />
+		</fields>
+	</fieldset>
+	<fieldset name="details">
+		<fields name="property_info">
+			<field name="type" />
+			<field name="bedrooms" />
+			<field name="bathrooms" />
+			<field name="condition" />
+			<field name="size" />
+			<field name="parking" />
+		</fields>
+	</fieldset>
+	<fieldset name="features">
+		<fields name="property_info"> <!-- garage, carport, pool, a/c, etc... comes form database -->
+			<field name="features" type="property_features" />
+		</fields>
+	</fieldset>
+	<fieldset name="publish">
+	</fieldset>
+	<field name="id" type="hidden" filter="unset" />
+	<field name="aid" type="hidden" filter="unset" />
+	<field name="cid" type="hidden" filter="unset" />
+	<field name="uid" type="hidden" filter="unset" />
+	<field name="catid" type="hidden" filter="unset" />
+	<field name="state" type="hidden" filter="unset" />
+	<field name="ordering" type="hidden" filter="unset" />
+	<field name="publish_up" type="hidden" filter="unset" />
+	<field name="publish_down" type="hidden" filter="unset" />
+	<field name="featured" type="hidden" filter="unset" />
+	<field name="access" type="hidden" filter="unset" />
+	<field name="checked_out" type="hidden" filter="unset" />
+	<field name="checked_out_by" type="hidden" filter="unset" />
+	<field name="notes" type="hidden" filter="unset" />
+	<field name="language" type="hidden" filter="unset" />
+</form>

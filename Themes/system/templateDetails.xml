@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Sold! CRM 1.0 alpha//DTD template 1.0//EN" "http://www.soldcrm.com/xml/dtd/template-install.dtd">
+<extension version="2.5" type="template" client="site">
+	<name>metro</name>
+	<version>1.0.0</version>
+	<creationDate>April 2012</creationDate>
+	<author>Daniel L. Jackson</author>
+	<authorEmail>info@webhens.com</authorEmail>
+	<authorUrl>http://www.webhens.com</authorUrl>
+    <copyright>Copyright (C) 2012 Sold! CRM. All Rights Reserved.</copyright>
+    <license>see LICENSE.txt</license>
+	<description>Metro is for Windows 8.</description>
+	<files>
+		<filename>component.php</filename>
+		<filename>config.php</filename>
+		<filename>config.xml</filename>
+		<filename>config.default</filename>
+		<filename>error.php</filename>		
+		<filename>index.php</filename>
+		<filename>offline.php</filename>		
+		<filename>raw.php</filename>
+		<filename>templateDetails.xml</filename>
+		<folder>css</folder>
+		<folder>js</folder>
+		<folder>fonts</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>layouts</folder>
+		<folder>styles</folder>
+		<folder>warp</folder>
+	</files>
+	<positions>
+		<position>absolute</position>
+		<position>calenbar</position>
+		<position>search</position>
+		<position>logo</position>
+		<position>menu</position>
+		<position>banner</position>
+		<position>toolbar-l</position>
+		<position>toolbar-r</position>
+		<position>headerbar</position>
+		<position>breadcrumbs</position>
+		<position>top-a</position>
+		<position>top-b</position>
+		<position>bottom-a</position>
+		<position>bottom-b</position>
+		<position>innertop</position>
+		<position>innerbottom</position>
+		<position>sidebar-a</position>
+		<position>sidebar-b</position>
+		<position>footer</position>
+		<position>debug</position>
+		<position>mobile-logo</position>
+		<position>mobile-menu</position>
+		<position>mobile-top</position>
+		<position>mobile-bottom</position>
+		<position>mobile-footer</position>
+	</positions>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.tpl_metro.ini</language>
+		<language tag="en-GB">en-GB/en-GB.tpl_metro.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="profile" type="profile" default="" label="Default Profile" description="Select the profile which should be loaded by default." />
+				<field name="dynamic_profiles" type="radio" default="1" label="Dynamic Profiles" description="Allow profiles to be loaded by URL.">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="date" type="radio" default="1" label="Date" description="Show the date.">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="totop_scroller" type="radio" default="1" label="To-Top Scroller" description="Show the to-top scroller.">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="crm_branding" type="radio" default="1" label="CRM Branding" description="Show the Sold! CRM branding.">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+			</fieldset>
+			<fieldset name="profiles" label="Dynamic Profile Options">
+				<field name="style" type="styles" default="" label="Style" description="Select the style variation (color scheme)." />
+				<field name="background" type="list" default="gradientblue" label="Background" description="Select the background.">
+					<option value="gradientblue">Gradient Blue</option>
+					<option value="gradientgreen">Gradient Green</option>
+					<option value="gradientgrey">Gradient Grey</option>
+					<option value="ambientpink">Ambient Pink</option>
+					<option value="ambientturquoise">Ambient Turquoise</option>
+					<option value="ambientsunset">Ambient Sunset</option>
+					<option value="wood">Wood</option>
+					<option value="street">Street</option>
+					<option value="grass">Grass</option>
+					<option value="desert">Desert</option>
+					<option value="bridge">Bridge</option>
+					<option value="animated:default">Animated Default</option>
+					<option value="animated:red">Animated Red</option>
+				</field>
+				<field name="texture" type="list" default="default" label="Background Texture" description="Texture set in front of background.">
+					<option value="">None</option>
+					<option value="tv">TV</option>
+					<option value="tvgrid">TV Grid</option>
+					<option value="dotswhite">Dots White</option>
+					<option value="scanlines">Scanlines</option>
+				</field>
+				<field name="systembackground" type="radio" default="white" label="System Background" description="Select the background of the system output.">
+					<option value="white">White</option>
+					<option value="transparent">Transparent</option>
+				</field>
+				<field name="transparency" type="list" default="transparency-25" label="Transparency Level" description="Select the the box transparency level">
+					<option value="transparency-25">25%</option>
+					<option value="transparency-50">50%</option>
+					<option value="transparency-75">75%</option>
+				</field>
+				<field name="animations" type="radio" default="1" label="CSS Animations" description="CSS hover animations.">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="font1" type="list" default="default" label="Body Font" description="Select the main body typeface.">
+					<option value="arial">Arial</option>
+					<option value="lucida">Lucida</option>
+					<option value="georgia">Georgia</option>
+					<option value="timesnewroman">Times New Roman</option>
+					<option value="trebuchet">Trebuchet</option>
+					<option value="droidsans">Droid Sans</option>
+				</field>
+				<field name="font2" type="list" default="default" label="Header Font" description="Select the headings typeface.">
+					<option value="arial">Arial</option>
+					<option value="lucida">Lucida</option>
+					<option value="georgia">Georgia</option>
+					<option value="timesnewroman">Times New Roman</option>
+					<option value="trebuchet">Trebuchet</option>
+					<option value="bebas">Bebas Neue</option>
+					<option value="yanonekaffeesatz">Yanone Kaffeesatz</option>
+					<option value="droidsans">Droid Sans</option>
+					<option value="newciclefina">New Cicle Fina</option>
+					<option value="opensans">Open Sans</option>
+					<option value="opensanslight">Open Sans Light</option>
+				</field>
+				<field name="font3" type="list" default="default" label="Menu Font" description="Select the menu typeface.">
+					<option value="arial">Arial</option>
+					<option value="lucida">Lucida</option>
+					<option value="georgia">Georgia</option>
+					<option value="timesnewroman">Times New Roman</option>
+					<option value="trebuchet">Trebuchet</option>
+					<option value="bebas">Bebas Neue</option>
+					<option value="yanonekaffeesatz">Yanone Kaffeesatz</option>
+					<option value="droidsans">Droid Sans</option>
+					<option value="newciclefina">New Cicle Fina</option>
+					<option value="opensans">Open Sans</option>
+					<option value="opensanslight">Open Sans Light</option>
+				</field>
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="compression" type="list" default="0" label="Compression" description="Minify and combine CSS and JavaScript into a single file. Use gzip compression and Data URIs to reduce image file requests.">
+					<option value="0">None</option>
+					<option value="1">Combination + Minify</option>
+					<option value="2">Combination + Minify + Data URIs</option>
+					<option value="3">Combination + Minify + Data URIs + Gzip</option>
+				</field>
+				<field name="ie6page" type="radio" default="1" label="IE6 Upgrade Page" description="Redirect Internet Explorer 6 to the upgrade page.">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="twitter" type="radio" default="0" label="Twitter Button" description="Display a Tweet button in your articles.">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="plusone" type="radio" default="0" label="Google+ Button" description="Display a Google+ button in your articles.">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="facebook" type="radio" default="0" label="Facebook Button" description="Display a facebook like button in your articles.">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="tracking_code" type="textarea" rows="8" cols="30" label="Tracking Code" description="Insert your Google Analytics tracking code." />
+			</fieldset>
+			<fieldset name="layout" label="Layout Options">
+				<field name="template_width" type="text" size="10" default="980" label="Template Width" description="Set the template width in pixel." class="short" />
+				<field name="sidebar-a_width" type="text" size="10" default="200" label="Sidebar A Width" description="Set the Sidebar A width in pixel." class="short" />
+				<field name="sidebar-b_width" type="text" size="10" default="200" label="Sidebar B Width" description="Set the Sidebar B width in pixel." class="short" />
+				<field name="sidebar-a" type="list" default="right" label="Sidebar A Position" description="Align the sidebar to the left or right.">
+					<option value="right">Right</option>
+					<option value="left">Left</option>
+				</field>
+				<field name="sidebar-b" type="list" default="right" label="Sidebar B Position" description="Align the sidebar to the left or right.">
+					<option value="right">Right</option>
+					<option value="left">Left</option>
+				</field>
+				<field name="top-a" type="layout" default="equal" label="Top A Layout" description="Select a grid layout for this module position." />
+				<field name="top-b" type="layout" default="equal" label="Top B Layout" description="Select a grid layout for this module position." />
+				<field name="innertop" type="layout" default="equal" label="Inner Top Layout" description="Select a grid layout for this module position." />
+				<field name="innerbottom" type="layout" default="equal" label="Inner Bottom Layout" description="Select a grid layout for this module position." />
+				<field name="bottom-a" type="layout" default="equal" label="Bottom A Layout" description="Select a grid layout for this module position." />
+				<field name="bottom-b" type="layout" default="equal" label="Bottom B Layout" description="Select a grid layout for this module position." />
+				<field name="menu_width" type="text" size="10" default="250" label="Drop Down Column Width" description="Set the column width of the drop down menu in pixel." class="short" />
+			</fieldset>
+			<fieldset name="Mobile" label="Mobile Options">
+				<field name="mobile" type="radio" default="1" label="Mobile Theme" description="Enable the mobile theme.">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="mobile_login" type="radio" default="1" label="Login" description="Show the login in the mobile theme.">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="mobile_search" type="radio" default="1" label="Search" description="Show the search in the mobile theme.">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

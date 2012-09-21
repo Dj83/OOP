@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5" method="upgrade">
+	<name>com_subscriptions</name>
+	<author>Daniel L. Jackson</author>
+	<creationDate>March 2012</creationDate>
+	<copyright>(C) 2012 TODO: . All rights reserved.</copyright>
+	<license>see LICENSE.txt</license>
+	<authorEmail>developer@soldcrm.com.au</authorEmail>
+	<authorUrl>www.soldcrm.com.au</authorUrl>
+	<version>2.5.0</version>
+	<description>COM_SUBSCRIPTIONS_XML_DESCRIPTION</description>
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+	<files folder="site">
+		<filename>subscriptions.php</filename>
+		<filename>controller.php</filename>
+		<filename>index.html</filename>
+		<filename>router.php</filename>
+		<folder>helpers</folder>
+		<folder>models</folder>
+	</files>
+	<languages folder="site">
+		<language tag="en-GB">language/en-GB.com_subscriptions.ini
+		</language>
+	</languages>
+	<administration>
+		<menu img="class:subscriptions">com_subscriptions</menu>
+		<submenu>
+			<menu link="option=com_subscriptions" view="subscriptions" img="class:subscriptions"
+				alt="Subscriptions/Subscriptions">com_subscriptions_subscriptions</menu>
+			<menu link="option=com_categories&amp;extension=com_subscriptions"
+				view="categories" img="class:subscriptions-cat" alt="Subscriptions/Categories">com_subscriptions_categories</menu>
+			<menu link="option=com_subscriptions&amp;view=features" view="features"
+				img="class:subscriptions-features" alt="Subscriptions/Features">com_subscriptions_features</menu>
+			<menu link="option=com_categories&amp;extension=com_subscriptions.features"
+				view="categories" img="class:features-cat" alt="Subscriptions/Features Categories">com_subscriptions_features_categories</menu>
+		</submenu>
+		<files folder="admin">
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>subscriptions.php</filename>
+			<filename>controller.php</filename>
+			<filename>index.html</filename>
+			<folder>controllers</folder>
+			<folder>helpers</folder>
+			<folder>models</folder>
+			<folder>sql</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
+		</files>
+		<languages folder="admin">
+			<language tag="en-GB">language/en-GB.com_subscriptions.ini</language>
+			<language tag="en-GB">language/en-GB.com_subscriptions.sys.ini</language>
+		</languages>
+	</administration>
+</extension>
+
+

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5" method="install">
+	<name>Realtor</name>
+	<author>Daniel L. Jackson</author>
+	<creationDate>March 2012</creationDate>
+	<copyright>(C) 2012. All rights reserved.</copyright>
+	<license>see LICENSE.txt</license>
+	<authorEmail>daniel.jackson2@utoledo.edu</authorEmail>
+	<authorUrl>www.webhens.com</authorUrl>
+	<version>2.5.0</version>
+	<description>COM_REALTOR_XML_DESCRIPTION</description>
+	<install> <!-- Runs on install -->
+		<sql> <!-- No folder attrib set to keep the sql folder in admin -->
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall> <!-- Runs on uninstall -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+	<files folder="site">
+		<filename>index.html</filename>
+		<folder>helpers</folder>
+	</files>
+	<languages folder="site">
+		<language tag="en-GB">language/en-GB.com_realtor.ini</language>
+	</languages>
+
+	<administration>
+		<menu img="class:realtor">com_realtor</menu>
+		<submenu>
+			<!--
+				Note that all & must be escaped to &amp; for the file to be valid
+				XML and be parsed by the installer
+			-->
+			<menu link="option=com_realtor" img="class:lead"
+				alt="Realtor/Leads">com_realtor_leads</menu>
+
+			<menu link="option=com_realtor&amp;view=properties" img="class:property"
+				alt="Realtor/Properties">com_realtor_properties</menu>
+
+			<menu link="option=com_realtor&amp;view=reports" img="class:report"
+				alt="Realtor/Reports">com_realtor_reports</menu>
+
+			<menu link="option=com_realtor&amp;view=store" img="class:store"
+				alt="Realtor/Store">com_realtor_store</menu>
+
+			<menu link="option=com_categories&amp;extension=com_realtor.suppliers"
+				view="categories" img="class:realtor-supps" alt="Realtor/Suppliers">com_realtor_suppliers</menu>
+
+			<menu link="option=com_categories&amp;extension=com_realtor.distributors"
+				view="categories" img="class:realtor-dists" alt="Realtor/Distributors">com_realtor_distributors</menu>
+
+			<menu link="option=com_categories&amp;extension=com_realtor.markets"
+				view="categories" img="class:realtor-marks" alt="Realtor/Markets">com_realtor_markets</menu>
+
+			<menu link="option=com_categories&amp;extension=com_realtor.properties"
+				view="categories" img="class:realtor-props" alt="Realtor/Properties">com_realtor_properties</menu>
+
+			<menu link="option=com_categories&amp;extension=com_realtor.features"
+				view="categories" img="class:realtor-feats" alt="Realtor/Features">com_realtor_features</menu>
+
+			<menu link="option=com_categories&amp;extension=com_realtor.store"
+				view="categories" img="class:realtor-store" alt="Realtor/Store">com_realtor_store</menu>
+
+			<menu link="option=com_categories&amp;extension=com_realtor.subscriptions"
+				view="categories" img="class:realtor-subs" alt="Realtor/Subscriptions">com_realtor_subscriptions</menu>
+
+		</submenu>
+		<files folder="admin">
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>realtor.php</filename>
+			<filename>controller.php</filename>
+			<filename>index.html</filename>
+			<folder>controllers</folder>
+			<folder>elements</folder>
+			<folder>helpers</folder>
+			<folder>models</folder>
+			<folder>sql</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
+		</files>
+		<languages folder="admin">
+			<language tag="en-GB">language/en-GB.com_realtor.ini</language>
+			<language tag="en-GB">language/en-GB.com_realtor.sys.ini</language>
+		</languages>
+	</administration>
+</extension>
+

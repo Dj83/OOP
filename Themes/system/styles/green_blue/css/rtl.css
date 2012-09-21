@@ -1,0 +1,8 @@
+@import url(../../../css/rtl.css);
+
+/* Tools
+----------------------------------------------------------------------------------------------------*/
+
+/* Social Icons */
+#socialbar.untouched .social-icons,
+.social-icons { background-image: url(../images/rtl/socialbar_button.png); }

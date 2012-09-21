@@ -1,0 +1,1 @@
+<div class="box-warning">You have no form categories made!</div>

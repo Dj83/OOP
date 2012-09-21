@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Form Layout" option="com_bulletins">
+		<message>
+			<![CDATA[Menu item that shows a link to create a new bulletin record on the site.]]>
+		</message>
+	</layout>
+	<fields name="params">
+		<fieldset name="basic">
+			<field name="enable_category" 
+				type="radio" 
+				default="0" 
+				label="Enable Categories" 
+				description="Flag to toggle whether or not to allow users to set the categories.">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+			</field>
+			<field name="catid" 
+				type="category" 
+				label="JGLOBAL_CHOOSE_CATEGORY_LABEL" 
+				extension="com_bulletins" 
+				description="JGLOBAL_CHOOSE_CATEGORY_DESC" />
+			<field name="excluded_usergroups" multiple="true"
+				type="usergroup" 
+				default="0" 
+				label="Excluded Usergroups" 
+				description="Flag to toggle which usergroups to exclude on the form to create a new bulletin.">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+			</field>
+		</fieldset>
+	</fields>
+</metadata>

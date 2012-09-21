@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+		<field name="id"  type="text" class="readonly" label="JGLOBAL_FIELD_ID_LABEL"
+			description="JGLOBAL_FIELD_ID_DESC" size="10" default="0"
+			readonly="true"  />
+
+		<field name="asset_id" type="hidden" filter="unset" />
+
+		<field name="formatted_address"
+			type="autocomplete"
+			class="inputbox"
+			label="COM_REALTOR_FIELD_FORMATTEDADDRESS_LABEL"
+			description="COM_REALTOR_FIELD_FORMATTEDADDRESS_DESC"
+			filter="JComponentHelper::filterText"
+			package="geolocator"
+			subpackage="places" />
+
+		<fieldset name="location">
+			<fields name="address_components">
+				<field name="street_number" 
+					type="hidden"
+					label="COM_REALTOR_FIELD_ADDRESSCOMPONENTS_LABEL"
+					description="COM_REALTOR_FIELD_ADDRESSCOMPONENTS_DESC"
+					required="true"
+					/>
+				<field name="route" 
+					type="hidden"
+					label="COM_REALTOR_FIELD_ROUTE_LABEL"
+					description="COM_REALTOR_FIELD_ROUTE_DESC"
+					required="true"
+					/>
+				<field name="locality" 
+					type="hidden"
+					label="COM_REALTOR_FIELD_LOCALITY_LABEL"
+					description="COM_REALTOR_FIELD_LOCALITY_DESC"
+					/>
+				<field name="sublocality" 
+					type="hidden"
+					label="COM_REALTOR_FIELD_SUBLOCALITY_LABEL"
+					description="COM_REALTOR_FIELD_SUBLOCALITY_DESC"
+					/>
+				<field name="administrative_area_level_1" 
+					type="hiddengeo"
+					id="state"
+					multiple="true"
+					label="COM_REALTOR_FIELD_ADMINAREALEVEL1_LABEL"
+					description="COM_REALTOR_FIELD_ADMINAREALEVEL1_DESC"
+					required="true"
+					/>
+				<field name="administrative_area_level_2" 
+					type="hidden"
+					id="county"
+					label="COM_REALTOR_FIELD_ADMINAREALEVEL2_LABEL"
+					description="COM_REALTOR_FIELD_ADMINAREALEVEL2_DESC"
+					/>
+				<field name="administrative_area_level_3" 
+					type="hidden"
+					id="city"
+					label="COM_REALTOR_FIELD_ADMINAREALEVEL3_LABEL"
+					description="COM_REALTOR_FIELD_ADMINAREALEVEL3_DESC"
+					required="true"
+					/>
+				<field name="country" 
+					type="hiddengeo"
+					id="country"
+					multiple="true"
+					label="COM_REALTOR_FIELD_COUNTRY_LABEL"
+					description="COM_REALTOR_FIELD_COUNTRY_DESC"
+					required="true"
+					/>
+				<field name="postal_code" 
+					type="hidden"
+					id="postal_code"
+					label="COM_REALTOR_FIELD_POSTALCODE_LABEL"
+					description="COM_REALTOR_FIELD_POSTALCODE_DESC"
+					required="true"
+					/>
+				<field name="room" 
+					type="hidden"
+					label="COM_REALTOR_FIELD_ROOM_LABEL"
+					description="COM_REALTOR_FIELD_ROOM_DESC"
+					/>
+				<field name="floor" 
+					type="hidden"
+					label="COM_REALTOR_FIELD_FLOOR_LABEL"
+					description="COM_REALTOR_FIELD_FLOOR_DESC"
+					/>
+				<field name="unit" 
+					type="hidden"
+					label="COM_REALTOR_FIELD_UNIT_LABEL"
+					description="COM_REALTOR_FIELD_UNIT_DESC"
+					/>
+			</fields>
+			<fields name="geometry">
+				<field name="lat"
+					type="hidden"
+					required="true" />
+				<field name="lng"
+					type="hidden"
+					required="true" />
+			</fields>
+		</fieldset>
+		<field name="note" type="editor" class="inputbox" editor="none" default=""
+			label="COM_REALTOR_FIELD_NOTE_LABEL" description="COM_REALTOR_FIELD_NOTE_DESC"
+			filter="JComponentHelper::filterText" buttons="false" />
+
+		<field name="state" type="list" label="JSTATUS"
+			description="JFIELD_PUBLISHED_DESC" class="inputbox"
+			filter="intval" size="1" default="1">
+			<option value="1">
+				JPUBLISHED</option>
+			<option value="0">
+				JUNPUBLISHED</option>
+			<option value="2">
+				JARCHIVED</option>
+			<option value="-2">
+				JTRASHED</option>
+		</field>
+
+		<field name="catid" type="category" extension="com_realtor"
+			label="JCATEGORY" description="JFIELD_CATEGORY_DESC"
+			class="inputbox" required="true">
+		</field>
+		<field name="ordering" type="text" label="JFIELD_ORDERING_LABEL"
+			description="JFIELD_ORDERING_DESC" class="inputbox" size="6"
+			default="0" />
+
+		<field
+			name="buttonspacer"
+			description="JGLOBAL_ACTION_PERMISSIONS_DESCRIPTION"
+			type="spacer" />
+
+		<field name="access" type="accesslevel" label="JFIELD_ACCESS_LABEL"
+			description="JFIELD_ACCESS_DESC" class="inputbox" size="1" />
+
+		<field name="featured" type="list"
+			label="JFEATURED"
+			description="COM_REALTOR_FIELD_FEATURED_DESC"
+			default="0"
+		>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+
+		<field name="rules" type="rules" label="JFIELD_RULES_LABEL"
+			translate_label="false" class="inputbox" filter="rules"
+			component="com_realtor" section="property" validate="rules"
+		/>
+	<fieldset name="sell">
+		<field name="forsale_up" type="calendar"
+			label="COM_REALTOR_FIELD_FORSALE_UP_LABEL" description="COM_REALTOR_FIELD_FORSALE_UP_DESC"
+			class="inputbox" format="%m-%d-%Y" size="22"
+			filter="user_utc" />
+		<field name="forsale_down" type="calendar"
+			label="COM_REALTOR_FIELD_FORSALE_DOWN_LABEL" description="COM_REALTOR_FIELD_FORSALE_DOWN_DESC"
+			class="inputbox" format="%m-%d-%Y" size="22"
+			filter="user_utc" />
+
+		<field name="forsale_currency"
+			type="currencies"
+			label="COM_REALTOR_FIELD_FORSALE_CURRENCY_LABEL"
+			description="COM_REALTOR_FIELD_FORSALE_CURRENCY_DESC"
+			/>
+		<field name="forsale_price"
+			type="currencytextbox"
+			asset_id="forsale_currency"
+			label="COM_REALTOR_FIELD_FORSALE_PRICE_LABEL"
+			description="COM_REALTOR_FIELD_FORSALE_PRICE_DESC"
+			/>
+		<field name="sold_date" type="calendar"
+			label="COM_REALTOR_FIELD_SOLDDATE_LABEL" description="COM_REALTOR_FIELD_SOLDDATE_DESC"
+			class="inputbox" format="%m-%d-%Y" size="22"
+			filter="user_utc" />
+		<field name="sold_currency"
+			type="currencies"
+			label="COM_REALTOR_FIELD_SOLD_CURRENCY_LABEL"
+			description="COM_REALTOR_FIELD_SOLD_CURRENCY_DESC"
+			/>
+		<field name="sold_price"
+			type="currencytextbox"
+			asset_id="sold_currency"
+			label="COM_REALTOR_FIELD_SOLD_PRICE_LABEL"
+			description="COM_REALTOR_FIELD_SOLD_PRICE_DESC"
+			/>
+	</fieldset>
+	<fieldset name="property">
+		<field name="size" type="numberspinner"
+			label="COM_REALTOR_FIELD_PROPERTYSIZE_LABEL"
+			description="COM_REALTOR_FIELD_PROPERTYSIZE_DESC"
+		/>
+		<field name="size_unit" type="text" 
+			label="COM_REALTOR_FIELD_PROPERTYSIZEUNIT_LABEL"
+			description="COM_REALTOR_FIELD_PROPERTYSIZEUNIT_DESC"
+		/>
+		<field name="type"
+			type="category"
+			extension="com_realtor.properties" 
+			label="COM_REALTOR_FIELD_PROPERTYTYPE_LABEL"
+			description="COM_REALTOR_FIELD_PROPERTYTYPE_DESC"
+		/>
+		<field name="condition"
+			type="category"
+			extension="com_realtor.conditions" 
+			label="COM_REALTOR_FIELD_PROPERTYCONDITION_LABEL"
+			description="COM_REALTOR_FIELD_PROPERTYCONDITION_DESC"
+		/>
+		<field name="suburbs_ids"
+			type="suburbs"
+			label="COM_REALTOR_FIELD_PROPERTYSUBURBS_LABEL"
+			description="COM_REALTOR_FIELD_PROPERTYSUBURBS_DESC" />
+		<field name="sectionid"
+			label="COM_REALTOR_FIELD_PROPERTYSECTIONID_LABEL"
+			description="COM_REALTOR_FIELD_PROPERTYSUBURBS_DESC" />
+		<field name="bedrooms"
+			label="COM_REALTOR_FIELD_PROPERTYBEDROOMS_LABEL"
+			description="COM_REALTOR_FIELD_PROPERTYBEDROOMS_DESC" />
+		<field name="bathrooms"
+			label="COM_REALTOR_FIELD_PROPERTYBATHROOMS_LABEL"
+			description="COM_REALTOR_FIELD_PROPERTYBATHROOMS_DESC" />
+		<field name="parking"
+			label="COM_REALTOR_FIELD_PROPERTYPARKING_LABEL"
+			description="COM_REALTOR_FIELD_PROPERTYPARKING_DESC" />
+		<field name="parkingtype_id"
+			label="COM_REALTOR_FIELD_PROPERTYPARKINGTYPEID_LABEL"
+			description="COM_REALTOR_FIELD_PROPERTYPARKINGTYPEID_DESC">
+				<option value="0">COM_REALTOR_FIELD_PROPERTYPARKINGTYPEID_OPTION_HOUSE</option>
+				<option value="1">COM_REALTOR_FIELD_PROPERTYPARKINGTYPEID_OPTION_APT</option>
+				<option value="2">COM_REALTOR_FIELD_PROPERTYPARKINGTYPEID_OPTION_BUSINESS</option>
+				<option value="3">COM_REALTOR_FIELD_PROPERTYPARKINGTYPEID_OPTION_HOTEL</option>
+				<option value="4">COM_REALTOR_FIELD_PROPERTYPARKINGTYPEID_OPTION_TIMESHARE</option>
+				<option value="5">COM_REALTOR_FIELD_PROPERTYPARKINGTYPEID_OPTION_VACATION</option>
+				<option value="6">COM_REALTOR_FIELD_PROPERTYPARKINGTYPEID_OPTION_OTHER</option>
+		</field>
+	</fieldset>
+	<fieldset name="files">
+		<fields name="files"> <!-- garage, carport, pool, a/c, etc... comes form database -->
+			<field type="mediagrid"
+				media="video" />
+		</fields>
+		<fields name="images"> <!-- garage, carport, pool, a/c, etc... comes form database -->
+			<field type="mediagrid"
+				media="image" />
+		</fields>
+	</fieldset>
+	<fieldset name="features">
+		<fields name="features"> <!-- garage, carport, pool, a/c, etc... comes form database -->
+			<field type="propertyfeatures" />
+		</fields>
+	</fieldset>
+	<fieldset name="publish">
+
+		<field name="created" type="calendar" label="COM_REALTOR_FIELD_CREATED_LABEL"
+			description="COM_REALTOR_FIELD_CREATED_DESC" class="inputbox" size="22"
+			format="%Y-%m-%d %H:%M:%S" filter="user_utc" />
+
+		<field name="created_by" type="user"
+			label="COM_REALTOR_FIELD_CREATED_BY_LABEL" description="COM_REALTOR_FIELD_CREATED_BY_DESC" />
+
+		<field name="modified" type="calendar" label="COM_REALTOR_FIELD_MODIFIED_LABEL"
+			description="COM_REALTOR_FIELD_MODIFIED_DESC" class="inputbox" size="22"
+			format="%Y-%m-%d %H:%M:%S" filter="user_utc" />
+
+		<field name="modified_by" type="user"
+			label="COM_REALTOR_FIELD_MODIFIED_BY_LABEL" readonly="true" description="COM_REALTOR_FIELD_MODIFIED_BY_DESC" />
+
+
+		<field name="checked_out" type="hidden" filter="unset" />
+
+		<field name="checked_out_time" type="hidden" filter="unset" />
+
+		<field name="publish_up" type="calendar"
+			label="COM_REALTOR_FIELD_PUBLISH_UP_LABEL" description="COM_REALTOR_FIELD_PUBLISH_UP_DESC"
+			class="inputbox" format="%Y-%m-%d %H:%M:%S" size="22"
+			filter="user_utc" />
+
+		<field name="publish_down" type="calendar"
+			label="COM_REALTOR_FIELD_PUBLISH_DOWN_LABEL" description="COM_REALTOR_FIELD_PUBLISH_DOWN_DESC"
+			class="inputbox" format="%Y-%m-%d %H:%M:%S" size="22"
+			filter="user_utc" />
+
+		<field name="language" type="contentlanguage" label="JFIELD_LANGUAGE_LABEL"
+			description="COM_REALTOR_FIELD_LANGUAGE_DESC" class="inputbox">
+			<option value="*">JALL</option>
+		</field>
+	</fieldset>
+	<fieldset name="metadata">
+		<fields name="metadata">
+			<field name="robots"
+				type="list"
+				label="JFIELD_METADATA_ROBOTS_LABEL"
+				description="JFIELD_METADATA_ROBOTS_DESC"
+				>
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="index, follow">JGLOBAL_INDEX_FOLLOW</option>
+				<option value="noindex, follow">JGLOBAL_NOINDEX_FOLLOW</option>
+				<option value="index, nofollow">JGLOBAL_INDEX_NOFOLLOW</option>
+				<option value="noindex, nofollow">JGLOBAL_NOINDEX_NOFOLLOW</option>
+			</field>
+
+			<field name="author" type="user"
+				label="JAUTHOR" description="JFIELD_METADATA_AUTHOR_DESC"
+				size="20" />
+		</fields>
+	</fieldset>
+</form>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Bulletins" option="com_bulletins">
+		<message>
+			<![CDATA[Menu item for a bulletins view.]]>
+		</message>
+	</layout>
+</metadata>
